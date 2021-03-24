@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var pwlength = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
+  var pwLength = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
   var password = generatePassword(addNumber,addSpecial,addUpper,addLower);
   var passwordText = document.querySelector("#password");
   
