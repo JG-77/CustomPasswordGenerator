@@ -8,8 +8,8 @@ var addUpper
 var addLower 
 
 // Write password to the #password input
-function generatePassword(addNumber,addSpecial,addUpper,addLower){
-    
+function generatePassword(){
+    return "placeholder"
 }
     
 
