@@ -40,20 +40,6 @@ function generatePassword(){
     addUpper = window.confirm("Would you like password to generate uppercase letters?");
     addLower = window.confirm("Would you like password to generate lowercase letters?");
     
-    
-    //If user clicks 'cancel,' selection is not added
-    if (!addNumber) {
-        return;
-    }
-    if (!addSpecial) {
-        return;
-    }
-    if (!addUpper) {
-        return;
-    }
-    if (!addLower) {
-        return;
-    }
     }
 
 
