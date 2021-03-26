@@ -41,7 +41,17 @@ function generatePassword(){
         addLower = window.confirm("Would you like password to generate lowercase letters?");
     }
     //if statements for character type selections
-
+    //if no character type is selected, user is alerted and must retry
+    if (!addNumber && !addSpecial && !addUpper && !addLower) {
+        charSelection = window.alert("You must select at least on charater type for random password to generate!");
+        return;
+    } 
+    //if all character types selected
+    else if (addNumber && addSpecial && addUpper && addLower) {
+        charSelection = addNumber.concat(addSpecial, addUpper, addLower);
+    }
+    //if 3 types selected
+    
 
 }
 
