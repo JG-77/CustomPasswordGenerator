@@ -45,6 +45,7 @@ function generatePassword(){
         addSpecial = window.confirm("Would you like password to generate special characters?");
         addUpper = window.confirm("Would you like password to generate uppercase letters?");
         addLower = window.confirm("Would you like password to generate lowercase letters?");
+        
     
     //if statements for character type selections
     //if no character type is selected, user is alerted and must retry
@@ -52,7 +53,7 @@ function generatePassword(){
         window.alert("You must select at least on charater type for random password to generate!");
         return;
     } 
-    //if all character types selected
+    //if all character types selected --> console error
     else if (addNumber && addSpecial && addUpper && addLower) {
         charSelection = addNumber.concat(addSpecial, addUpper, addLower);
     }
@@ -68,13 +69,18 @@ function generatePassword(){
         charSelection = charSelection.concat(addLowerOpt);
     }
 
+    var result = [];
     //loop for password generator
-    for (var i = 0; i < numSelection; i++);
+    for (var i = 0; i < numSelection; i++){
     var genPassword = charSelection[Math.floor(Math.random() * charSelection.length)];
+    result.push(genPassword);
+    }
 
+    //Collects user input and displays on screen --> needs editing??
+    var password = result.join(" ");
+    writePassword(password);
+    return password;
 }
-
-
 
 
 // Add event listener to generate button
