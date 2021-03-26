@@ -41,6 +41,7 @@ function generatePassword(){
         window.alert("Password must be between 8 and 128 characters");
         return;
     }
+    //error with windows confirms
         addNumber = window.confirm("Would you like password to generate numbers?");
         addSpecial = window.confirm("Would you like password to generate special characters?");
         addUpper = window.confirm("Would you like password to generate uppercase letters?");
@@ -53,9 +54,9 @@ function generatePassword(){
         window.alert("You must select at least on charater type for random password to generate!");
         return;
     } 
-    //if all character types selected --> console error
+    //if all character types selected 
     else if (addNumber && addSpecial && addUpper && addLower) {
-        charSelection = addNumber.concat(addSpecial, addUpper, addLower);
+        charSelection = charSelection.concat(addNumber, addSpecial, addUpper, addLower);
     }
 
     //if statements for slecting character types as 'true'
