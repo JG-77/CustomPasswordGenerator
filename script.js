@@ -14,6 +14,7 @@ var addSpecial
 var addUpper
 var addLower
 var numSelection
+var charSelection
 
 // Write password to the #password input
 function writePassword() {
@@ -24,23 +25,25 @@ function writePassword() {
 }
 
 function generatePassword(){
-
+    //logic for password length selections
     numSelection = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
     var pwLength = Number(numSelection)
     if (!numSelection) {
-        window.alert("Please enter a value");
+        window.alert("Please enter a value between 8 and 128");
         return;
     } else if (pwLength < 8 || pwLength > 128){
         window.alert("Password must be between 8 and 128 characters");
         return;
+    }else (pwLength >= 8 || pwLength <= 128); {
+        addNumber = window.confirm("Would you like password to generate numbers?");
+        addSpecial = window.confirm("Would you like password to generate special characters?");
+        addUpper = window.confirm("Would you like password to generate uppercase letters?");
+        addLower = window.confirm("Would you like password to generate lowercase letters?");
     }
-    
-    addNumber = window.confirm("Would you like password to generate numbers?");
-    addSpecial = window.confirm("Would you like password to generate special characters?");
-    addUpper = window.confirm("Would you like password to generate uppercase letters?");
-    addLower = window.confirm("Would you like password to generate lowercase letters?");
-    
-    }
+    //if statements for character type selections
+
+
+}
 
 
 
