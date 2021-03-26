@@ -31,15 +31,19 @@ function generatePassword(){
     if (!numSelection) {
         window.alert("Please enter a value between 8 and 128");
         return;
-    } else if (pwLength < 8 || pwLength > 128){
+    } else if (isNaN(pwLength)){
+        window.alert("Input not valid. Please enter a number");
+        return;
+    }
+    else if (pwLength < 8 || pwLength > 128){
         window.alert("Password must be between 8 and 128 characters");
         return;
-    }else (pwLength >= 8 || pwLength <= 128); {
+    }
         addNumber = window.confirm("Would you like password to generate numbers?");
         addSpecial = window.confirm("Would you like password to generate special characters?");
         addUpper = window.confirm("Would you like password to generate uppercase letters?");
         addLower = window.confirm("Would you like password to generate lowercase letters?");
-    }
+    
     //if statements for character type selections
     //if no character type is selected, user is alerted and must retry
     if (!addNumber && !addSpecial && !addUpper && !addLower) {
@@ -51,7 +55,7 @@ function generatePassword(){
         charSelection = addNumber.concat(addSpecial, addUpper, addLower);
     }
     //if 3 types selected
-    
+
 
 }
 
