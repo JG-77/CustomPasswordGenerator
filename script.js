@@ -56,10 +56,21 @@ function generatePassword(){
     else if (addNumber && addSpecial && addUpper && addLower) {
         charSelection = addNumber.concat(addSpecial, addUpper, addLower);
     }
+
     //if statements for slecting character types as 'true'
     if (addNumber) {
         charSelection = charSelection.concat(addNumberOpt);
+    } if (addSpecial){
+        charSelection = charSelection.concat(addSpecialOpt);
+    } if (addUpper){
+        charSelection = charSelection.concat(addUpperOpt);
+    } if (addLower){
+        charSelection = charSelection.concat(addLowerOpt);
     }
+
+    //loop for password generator
+    for (var i = 0; i < numSelection; i++);
+    var genPassword = charSelection[Math.floor(Math.random() * charSelection.length)];
 
 }
 
