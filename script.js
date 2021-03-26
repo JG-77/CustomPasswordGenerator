@@ -8,6 +8,13 @@ var addSpecialOpt = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".",
 var addUpperOpt = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var addLowerOpt = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+//variables for user selctions
+var addNumber
+var addSpecial
+var addUpper
+var addLower
+var numSelection
+
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
@@ -17,19 +24,21 @@ function writePassword() {
 }
 
 function generatePassword(){
-    
-    var pwLength = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
-    if (!pwLength) {
+
+    numSelection = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
+    var pwLength = Number(numSelection)
+    if (!numSelection) {
+        window.alert("Please enter a value");
         return;
     } else if (pwLength < 8 || pwLength > 128){
-        pwLength = window.alert("Password must be between 8 and 128 characters");
+        window.alert("Password must be between 8 and 128 characters");
         return;
     }
     
-    var addNumber = window.confirm("Would you like password to generate numbers?");
-    var addSpecial = window.confirm("Would you like password to generate special characters?");
-    var addUpper = window.confirm("Would you like password to generate uppercase letters?");
-    var addLower = window.confirm("Would you like password to generate lowercase letters?");
+    addNumber = window.confirm("Would you like password to generate numbers?");
+    addSpecial = window.confirm("Would you like password to generate special characters?");
+    addUpper = window.confirm("Would you like password to generate uppercase letters?");
+    addLower = window.confirm("Would you like password to generate lowercase letters?");
     
     
     //If user clicks 'cancel,' selection is not added
