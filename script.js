@@ -14,7 +14,7 @@ var addSpecial
 var addUpper
 var addLower
 var numSelection
-var charSelection
+var charSelection = []
 
 // Write password to the #password input
 function writePassword() {
@@ -25,6 +25,8 @@ function writePassword() {
 }
 
 function generatePassword(){
+    charSelection = [];
+
     //logic for password length selections
     numSelection = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
     var pwLength = Number(numSelection)
@@ -47,15 +49,17 @@ function generatePassword(){
     //if statements for character type selections
     //if no character type is selected, user is alerted and must retry
     if (!addNumber && !addSpecial && !addUpper && !addLower) {
-        charSelection = window.alert("You must select at least on charater type for random password to generate!");
+        window.alert("You must select at least on charater type for random password to generate!");
         return;
     } 
     //if all character types selected
     else if (addNumber && addSpecial && addUpper && addLower) {
         charSelection = addNumber.concat(addSpecial, addUpper, addLower);
     }
-    //if 3 types selected
-
+    //if statements for slecting character types as 'true'
+    if (addNumber) {
+        charSelection = charSelection.concat(addNumberOpt);
+    }
 
 }
 
