@@ -5,3 +5,6 @@ Github Pages live app:https://jg-77.github.io/CustomPasswordGenerator/
 
 ## Description
 The Javascript file for this application includes two main functions, several variables, and a loop for generating the password. The main function 'writePassword,' is the code that displays the generated password in the 'textarea' element of the html file. The password itself is generated in the 'generatePassword' function, and this function contains all the window prompts and character type selction choices. An array loop is also included to generate a random password based on the user's input, and the character types are contained in arrays in dinstinguished variables. 'If' statements have been included as well in the 'generatePassword' function to describe the coding logic based on user selection choices for their custom password.
+
+### Notes
+A bug was found where booleans would appear in generated passwords when all character types were selected for password. The screenshot below shows the bug displayed. Thanks to multiple tutoring help from BCS support, the issue was resolved. An 'if else' statement containing all array variables concatting iinto one variable was removed to resolve the issue (lines 56-58). 
