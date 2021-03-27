@@ -54,7 +54,7 @@ function generatePassword() {
         return;
     } 
 
-    //if statements for slecting character types as 'true'
+    //if statements for slecting character types
     if (addNumber) {
         charSelection = charSelection.concat(addNumberOpt);
     } if (addSpecial) {
@@ -72,12 +72,13 @@ function generatePassword() {
         result.push(genPassword);
     }
 
-    //Collects user input and displays on screen --> needs editing??
+    //Collects user input and displays on screen
     var password = result.join(" ");
+    //Displays password in colsole log, alert window, and textarea element
     window.alert(password);
     console.log(password)
     return password;
 }
 
-// Add event listener to generate button
+// Add event listener for generate button
 generateBtn.addEventListener("click", writePassword);
