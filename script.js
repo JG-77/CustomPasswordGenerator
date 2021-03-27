@@ -54,9 +54,9 @@ function generatePassword() {
         return;
     } 
     //if all character types selected 
-    else if (addNumber && addSpecial && addUpper && addLower) {
-        charSelection = charSelection.concat(addNumber, addSpecial, addUpper, addLower);
-    }
+    //else if (addNumber && addSpecial && addUpper && addLower) {
+        //charSelection = charSelection.concat(addNumber, addSpecial, addUpper, addLower);
+    //}
 
     //if statements for slecting character types as 'true'
     if (addNumber) {
