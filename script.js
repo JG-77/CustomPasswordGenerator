@@ -41,7 +41,7 @@ function generatePassword() {
         window.alert("Password must be between 8 and 128 characters");
         return;
     }
-        //Window confirm messages for character type selection
+    //Window confirm messages for character type selection
     addNumber = window.confirm("Would you like password to generate numbers?");
     addSpecial = window.confirm("Would you like password to generate special characters?");
     addUpper = window.confirm("Would you like password to generate uppercase letters?");
