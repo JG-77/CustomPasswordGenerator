@@ -22,8 +22,9 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
 }
-
+//function for generating password based on user selection
 function generatePassword() {
+    //variable is an empty array so that generated loop can be inserted
     charSelection = [];
 
     //logic for password length selections
@@ -79,7 +80,6 @@ function generatePassword() {
     var password = result.join(" ");
         return password;
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
