@@ -74,7 +74,9 @@ function generatePassword() {
 
     //Collects user input and displays on screen --> needs editing??
     var password = result.join(" ");
-        return password;
+    window.alert(password);
+    console.log(password)
+    return password;
 }
 
 // Add event listener to generate button
