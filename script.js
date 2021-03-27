@@ -53,10 +53,6 @@ function generatePassword() {
         window.alert("You must select at least on charater type for random password to generate!");
         return;
     } 
-    //if all character types selected 
-    //else if (addNumber && addSpecial && addUpper && addLower) {
-        //charSelection = charSelection.concat(addNumber, addSpecial, addUpper, addLower);
-    //}
 
     //if statements for slecting character types as 'true'
     if (addNumber) {
