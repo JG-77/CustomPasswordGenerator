@@ -20,34 +20,32 @@ var charSelection = []
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-    
     passwordText.value = password;
 }
 
-function generatePassword(){
+function generatePassword() {
     charSelection = [];
 
     //logic for password length selections
     numSelection = window.prompt("How many characters do you generated password to be?(Must be between 8 and 128 characters)");
-    var pwLength = Number(numSelection)
+        var pwLength = Number(numSelection)
     if (!numSelection) {
         window.alert("Please enter a value between 8 and 128");
         return;
     } else if (isNaN(pwLength)){
-        window.alert("Input not valid. Please enter a number");
+        window.alert("Input not valid. Please enter a number between 8 and 128");
         return;
     }
-    else if (pwLength < 8 || pwLength > 128){
+    else if (pwLength < 8 || pwLength > 128) {
         window.alert("Password must be between 8 and 128 characters");
         return;
     }
-    //error with windows confirms
-        addNumber = window.confirm("Would you like password to generate numbers?");
-        addSpecial = window.confirm("Would you like password to generate special characters?");
-        addUpper = window.confirm("Would you like password to generate uppercase letters?");
-        addLower = window.confirm("Would you like password to generate lowercase letters?");
+        //Window confirm messages for character type selection
+    addNumber = window.confirm("Would you like password to generate numbers?");
+    addSpecial = window.confirm("Would you like password to generate special characters?");
+    addUpper = window.confirm("Would you like password to generate uppercase letters?");
+    addLower = window.confirm("Would you like password to generate lowercase letters?");
         
-    
     //if statements for character type selections
     //if no character type is selected, user is alerted and must retry
     if (!addNumber && !addSpecial && !addUpper && !addLower) {
@@ -62,24 +60,24 @@ function generatePassword(){
     //if statements for slecting character types as 'true'
     if (addNumber) {
         charSelection = charSelection.concat(addNumberOpt);
-    } if (addSpecial){
+    } if (addSpecial) {
         charSelection = charSelection.concat(addSpecialOpt);
-    } if (addUpper){
+    } if (addUpper) {
         charSelection = charSelection.concat(addUpperOpt);
-    } if (addLower){
+    } if (addLower) {
         charSelection = charSelection.concat(addLowerOpt);
     }
 
     var result = [];
     //loop for password generator
-    for (var i = 0; i < numSelection; i++){
-    var genPassword = charSelection[Math.floor(Math.random() * charSelection.length)];
-    result.push(genPassword);
+    for (var i = 0; i < numSelection; i++) {
+        var genPassword = charSelection[Math.floor(Math.random() * charSelection.length)];
+        result.push(genPassword);
     }
 
     //Collects user input and displays on screen --> needs editing??
     var password = result.join(" ");
-    return password;
+        return password;
 }
 
 
